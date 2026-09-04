@@ -38,7 +38,7 @@ A regra principal da interface impede que uma pessoa vinculada a uma assinatura 
 
 ```bash
 git clone <URL-DO-REPOSITORIO>
-cd nexora-subscriptions
+cd nexora-sistema-gerenciamento-assinaturas
 ```
 
 ### 2. Configure as variáveis de ambiente
