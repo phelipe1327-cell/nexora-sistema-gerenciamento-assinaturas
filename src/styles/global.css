@@ -1,0 +1,108 @@
+:root {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f3f5fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { min-width: 320px; background: #f3f5fb; }
+body { min-width: 320px; min-height: 100vh; margin: 0; }
+button, input, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid rgba(0, 255, 136, 0.36);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.brand { display: inline-flex; align-items: center; gap: 0.7rem; color: #172033; }
+.brand-mark-image { width: 2.7rem; height: 2.7rem; object-fit: contain; filter: drop-shadow(0 0 .7rem rgba(0,255,136,.18)); }
+.brand-logo-full { display: block; width: 10.5rem; height: 3.5rem; object-fit: contain; object-position: left center; }
+.brand-copy { display: grid; line-height: 1.05; }
+.brand-copy strong { color: inherit; font-family: "Orbitron", sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.08em; }
+.brand-copy small { margin-top: 0.28rem; color: #6b7280; font-size: 0.64rem; font-weight: 600; white-space: nowrap; }
+.brand--compact .brand-mark-image { width: 2.35rem; height: 2.35rem; }
+.brand--inverse { color: #f8fafc; }
+.brand--inverse .brand-copy small { color: #94a3b8; }
+
+.app-shell {
+  --app-background: #f3f5fb;
+  --app-surface: #ffffff;
+  --app-surface-soft: #f8f9fd;
+  --app-text: #172033;
+  --app-muted: #697386;
+  --app-border: #e4e8f1;
+  --app-input-background: #ffffff;
+  --app-input-text: #172033;
+  --sidebar-background: #050807;
+  --sidebar-border: rgba(255,255,255,.1);
+  --sidebar-text: #f5f8f6;
+  --sidebar-muted: #98a39e;
+  --sidebar-hover: rgba(255,255,255,.055);
+  min-height: 100vh;
+  color: var(--app-text);
+  background: var(--app-background);
+}
+
+.app-shell.dark {
+  --app-background: #0d1220;
+  --app-surface: #151b2b;
+  --app-surface-soft: #1a2235;
+  --app-text: #f4f7fb;
+  --app-muted: #a8b1c4;
+  --app-border: #273149;
+  --app-input-background: #111827;
+  --app-input-text: #f4f7fb;
+  --sidebar-background: #050807;
+  --sidebar-border: rgba(255,255,255,.1);
+  --sidebar-text: #f4f7fb;
+  --sidebar-muted: #99a5ba;
+  --sidebar-hover: #1c2538;
+}
+
+.app-layout { display: flex; align-items: flex-start; min-height: 100vh; }
+.content-area { flex: 1; min-width: 0; min-height: 100vh; }
+.page-body { width: min(100%, 92rem); margin: 0 auto; padding: 0 2rem 3rem; }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: min(100%, 92rem);
+  min-height: 7.5rem;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+}
+.topbar-title { display: flex; align-items: center; gap: 0.9rem; min-width: 0; }
+.topbar-title > div { min-width: 0; }
+.topbar-title span:not(.topbar-icon) { color: var(--app-muted); font-size: 0.75em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+.topbar-title h1 { margin: 0.2rem 0 0; color: var(--app-text); font-family: "Orbitron", sans-serif; font-size: clamp(1.25em, 2vw, 1.7em); font-weight: 700; letter-spacing: -0.035em; }
+.topbar-icon { display: grid; place-items: center; width: 3rem; height: 3rem; color: #00d977; background: rgba(0, 255, 136, 0.09); border-radius: 0.9rem; }
+.topbar-icon svg { width: 1.35rem; height: 1.35rem; }
+.environment-label { display: inline-flex; align-items: center; gap: .45rem; padding: .5rem .72rem; color: var(--app-muted); background: var(--app-surface); border: 1px solid var(--app-border); border-radius: 999px; font-size: .7em; font-weight: 700; }
+.environment-label::before { content: ""; width: .45rem; height: .45rem; background: #22c55e; border-radius: 50%; box-shadow: 0 0 0 .2rem rgba(34,197,94,.1); }
+
+@media (max-width: 760px) {
+  .brand-logo-full { content: url("/brand/nexora-mark.png"); width: 2.8rem; height: 2.8rem; object-position: center; }
+  .page-body { padding: 0 1rem 2rem; }
+  .topbar { min-height: 6.5rem; padding: 1rem; }
+  .topbar-title > .topbar-icon { display: none; }
+}
+
+@media (max-width: 480px) {
+  .environment-label { display: none; }
+}
